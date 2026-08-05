@@ -1,6 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+import models
+from database import engine
+
+# This creates all tables defined in models.py, if they don't already exist
+models.Base.metadata.create_all(bind=engine)
+
 app = FastAPI(title="AI Interview Prep Platform API")
 
 app.add_middleware(
