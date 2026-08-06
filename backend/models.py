@@ -24,7 +24,7 @@ class Resume(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     filename = Column(String, nullable=False)
     extracted_text = Column(Text)
-    skills = Column(Text)  # comma-separated for now, improve later
+    skills = Column(Text)
     uploaded_at = Column(DateTime(timezone=True), server_default=func.now())
 
     user = relationship("User", back_populates="resumes")
@@ -35,8 +35,8 @@ class InterviewSession(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    role = Column(String)          # e.g. "Backend Developer"
-    topic = Column(String)         # e.g. "Python, System Design"
+    role = Column(String)
+    topic = Column(String)
     overall_score = Column(Float, default=0.0)
     started_at = Column(DateTime(timezone=True), server_default=func.now())
     ended_at = Column(DateTime(timezone=True), nullable=True)

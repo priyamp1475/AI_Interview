@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import models
 from database import engine
+from routers import auth as auth_router
 
-# This creates all tables defined in models.py, if they don't already exist
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="AI Interview Prep Platform API")
@@ -17,9 +17,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(auth_router.router)
+
+
 @app.get("/")
 def read_root():
     return {"message": "AI Interview Prep Platform API is running"}
+
 
 @app.get("/health")
 def health_check():
