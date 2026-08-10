@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import models
 from database import engine
 from routers import auth as auth_router
+from routers import interview as interview_router
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -18,6 +19,7 @@ app.add_middleware(
 )
 
 app.include_router(auth_router.router)
+app.include_router(interview_router.router)
 
 
 @app.get("/")

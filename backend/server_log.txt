@@ -1,0 +1,104 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Jahanvi\\Desktop\\AI_interview project\\AI_Interview\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [16296] using WatchFiles
+INFO:     Started server process [15624]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:51759 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51760 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51760 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51762 - "GET /docs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51762 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51762 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51764 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51764 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51772 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51773 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51777 - "POST /interview/start HTTP/1.1" 500 Internal Server Error
+WARNING:  WatchFiles detected changes in 'ai_service.py'. Reloading...
+ INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15624]
+WARNING:  WatchFiles detected changes in 'ai_service.py'. Reloading...
+ Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=16296, pipe_handle=588)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "C:\Python314\Lib\multiprocessing\spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\__init__.py", line 2, in <module>
+    from uvicorn.main import Server, main, run
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\main.py", line 33, in <module>
+    from uvicorn.supervisors import ChangeReload, Multiprocess
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\supervisors\__init__.py", line 12, in <module>
+    from uvicorn.supervisors.watchfilesreload import WatchFilesReload as ChangeReload
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\supervisors\watchfilesreload.py", line 7, in <module>
+    from watchfiles import watch
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\watchfiles\__init__.py", line 2, in <module>
+    from .main import Change, awatch, watch
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\watchfiles\main.py", line 10, in <module>
+    import anyio
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\anyio\__init__.py", line 29, in <module>
+    from ._core._fileio import AsyncFile as AsyncFile
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\anyio\_core\_fileio.py", line 38, in <module>
+    from pathlib.types import PathInfo
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 851, in get_code
+  File "<frozen importlib._bootstrap_external>", line 950, in get_data
+KeyboardInterrupt
+INFO:     Started server process [18744]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Finished server process [18744]
+ERROR:    Traceback (most recent call last):
+  File "C:\Python314\Lib\asyncio\runners.py", line 205, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Python314\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\asyncio\base_events.py", line 2056, in _run_once
+    handle._run()
+    ~~~~~~~~~~~^^
+  File "C:\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\server.py", line 80, in serve
+    with self.capture_signals():
+         ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\contextlib.py", line 148, in __exit__
+    next(self.gen)
+    ~~~~^^^^^^^^^^
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\server.py", line 340, in capture_signals
+    signal.raise_signal(captured_signal)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\runners.py", line 167, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\starlette\routing.py", line 645, in lifespan
+    await receive()
+  File "C:\Users\Jahanvi\Desktop\AI_interview project\AI_Interview\backend\venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\queues.py", line 186, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+INFO:     Stopping reloader process [16296]
