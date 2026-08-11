@@ -47,3 +47,27 @@ Evaluate the answer and return ONLY valid JSON in this exact format, nothing els
 
     result = json.loads(content)
     return result
+
+def generate_coding_problem(topic: str, difficulty: str = "easy"):
+    prompt = f"""You are creating a coding practice problem for topic: "{topic}", difficulty: {difficulty}.
+
+The problem must be solvable by a program that reads input from stdin and prints output to stdout (like a competitive programming problem).
+
+Return ONLY valid JSON in this exact structure, nothing else:
+{{
+  "title": "short title",
+  "description": "clear problem description including input/output format",
+  "starter_code": "# Write your Python solution here\\n",
+  "test_cases": [
+    {{"input": "example stdin input", "expected_output": "expected stdout output"}},
+    {{"input": "another input", "expected_output": "another expected output"}},
+    {{"input": "a third input", "expected_output": "a third expected output"}}
+  ]
+}}
+"""
+
+    response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
+    content = _clean_json_response(response.text)
+
+    problem = json.loads(content)
+    return problem
