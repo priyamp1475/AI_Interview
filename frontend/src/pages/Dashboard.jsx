@@ -28,7 +28,12 @@ function Dashboard() {
           Logout
         </button>
       </div>
-      <p className="text-gray-400">Your interview modules will appear here in the next phases.</p>
+      <button
+        onClick={() => navigate("/interview")}
+        className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold"
+      >
+        Start AI Interview
+      </button>
     </div>
   );
 }
