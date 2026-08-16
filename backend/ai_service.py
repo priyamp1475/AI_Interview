@@ -71,3 +71,26 @@ Return ONLY valid JSON in this exact structure, nothing else:
 
     problem = json.loads(content)
     return problem
+
+
+def generate_sql_question(topic: str, difficulty: str = "easy"):
+    prompt = f"""You are creating a SQL practice question for topic: "{topic}", difficulty: {difficulty}.
+
+Design a small database schema (1-3 tables) with realistic sample data, then write a question that requires a SELECT query to answer.
+
+Return ONLY valid JSON in this exact structure, nothing else:
+{{
+  "question": "plain English question the candidate must answer with a SQL query",
+  "schema_sql": "one or more CREATE TABLE statements, separated by semicolons",
+  "seed_sql": "one or more INSERT statements to populate the tables, separated by semicolons",
+  "solution_query": "the correct SELECT query that answers the question"
+}}
+
+Keep schema_sql and seed_sql valid standard SQLite syntax. Use simple, realistic sample data (5-10 rows total).
+"""
+
+    response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
+    content = _clean_json_response(response.text)
+
+    question = json.loads(content)
+    return question
