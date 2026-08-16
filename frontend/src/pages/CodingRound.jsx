@@ -45,7 +45,7 @@ function CodingRound() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen app-bg text-white p-8">
       <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Coding Round</h1>
@@ -112,7 +112,7 @@ function CodingRound() {
                 </p>
                 <div className="space-y-2">
                   {result.results.map((r, i) => (
-                    <div key={i} className="bg-gray-900 p-3 rounded text-sm">
+                    <div key={i} className="app-bg p-3 rounded text-sm">
                       <p className={r.passed ? "text-green-400" : "text-red-400"}>
                         Test {i + 1}: {r.passed ? "Passed" : "Failed"}
                       </p>

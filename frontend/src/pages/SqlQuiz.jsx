@@ -46,7 +46,7 @@ function SqlQuiz() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen app-bg text-white p-8">
       <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">SQL Quiz</h1>
@@ -79,11 +79,11 @@ function SqlQuiz() {
               <p className="text-lg">{question.question}</p>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Schema</p>
-                <pre className="bg-gray-900 p-3 rounded text-sm overflow-x-auto">{question.schema_sql}</pre>
+                <pre className="app-bg p-3 rounded text-sm overflow-x-auto">{question.schema_sql}</pre>
               </div>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Sample Data</p>
-                <pre className="bg-gray-900 p-3 rounded text-sm overflow-x-auto">{question.seed_sql}</pre>
+                <pre className="app-bg p-3 rounded text-sm overflow-x-auto">{question.seed_sql}</pre>
               </div>
             </div>
 
@@ -120,13 +120,13 @@ function SqlQuiz() {
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
                     <p className="text-gray-400 mb-1">Your Result</p>
-                    <pre className="bg-gray-900 p-2 rounded overflow-x-auto">
+                    <pre className="app-bg p-2 rounded overflow-x-auto">
                       {JSON.stringify(result.actual_rows, null, 2)}
                     </pre>
                   </div>
                   <div>
                     <p className="text-gray-400 mb-1">Expected Result</p>
-                    <pre className="bg-gray-900 p-2 rounded overflow-x-auto">
+                    <pre className="app-bg p-2 rounded overflow-x-auto">
                       {JSON.stringify(result.expected_rows, null, 2)}
                     </pre>
                   </div>

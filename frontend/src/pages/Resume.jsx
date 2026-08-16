@@ -29,7 +29,7 @@ function Resume() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen app-bg text-white p-8">
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Resume Upload</h1>

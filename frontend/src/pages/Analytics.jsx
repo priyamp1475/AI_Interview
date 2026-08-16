@@ -16,7 +16,7 @@ function Analytics() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white p-8">
+      <div className="min-h-screen app-bg text-white p-8">
         <p className="text-red-400">{error}</p>
         <button onClick={() => navigate("/dashboard")} className="mt-4 text-blue-400">
           Back to Dashboard
@@ -27,14 +27,14 @@ function Analytics() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white p-8">
+      <div className="min-h-screen app-bg text-white p-8">
         <p>Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen app-bg text-white p-8">
       <div className="max-w-3xl mx-auto space-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Your Performance</h1>

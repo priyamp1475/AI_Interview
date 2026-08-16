@@ -111,7 +111,7 @@ function Interview() {
 
   if (step === "setup") {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-4">
+      <div className="min-h-screen app-bg text-white flex items-center justify-center p-4">
         <form onSubmit={handleStart} className="bg-gray-800 p-8 rounded-lg w-full max-w-md space-y-4">
           <h2 className="text-2xl font-bold text-center">Start Mock Interview</h2>
           {error && <p className="text-red-400 text-sm">{error}</p>}
@@ -149,7 +149,7 @@ function Interview() {
   if (step === "interview") {
     const currentQuestion = session.questions[currentIndex];
     return (
-      <div className="min-h-screen bg-gray-900 text-white p-6 flex flex-col items-center">
+      <div className="min-h-screen app-bg text-white p-6 flex flex-col items-center">
         <div className="w-full max-w-2xl space-y-6">
           <p className="text-gray-400">
             Question {currentIndex + 1} of {session.questions.length}
@@ -203,7 +203,7 @@ function Interview() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div className="min-h-screen app-bg text-white p-6">
       <div className="max-w-2xl mx-auto space-y-6">
         <h2 className="text-2xl font-bold">Interview Complete</h2>
         {results.map((r, i) => (
