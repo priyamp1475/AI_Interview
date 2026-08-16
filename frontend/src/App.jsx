@@ -7,6 +7,7 @@ import Analytics from "./pages/Analytics";
 import Resume from "./pages/Resume";
 import SqlQuiz from "./pages/SqlQuiz";
 import CodingRound from "./pages/CodingRound";
+import SessionDetail from "./pages/SessionDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/sql-quiz" element={<SqlQuiz />} />
         <Route path="/coding-round" element={<CodingRound />} />
+        <Route path="/session/:id" element={<SessionDetail />} />
       </Routes>
     </BrowserRouter>
   );

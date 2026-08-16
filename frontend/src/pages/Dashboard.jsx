@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../api/client";
+import Navbar from "../components/Navbar";
 
 function Dashboard() {
   const [user, setUser] = useState(null);
@@ -13,11 +14,6 @@ function Dashboard() {
       .catch(() => navigate("/login"));
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
-
   if (!user) return null;
 
   const modules = [
@@ -29,23 +25,21 @@ function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen app-bg text-white p-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">Welcome, {user.name}</h1>
-        <button onClick={handleLogout} className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded">
-          Logout
-        </button>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl">
-        {modules.map((m) => (
-          <button
-            key={m.path}
-            onClick={() => navigate(m.path)}
-            className={`${m.color} px-6 py-6 rounded-lg font-semibold text-left`}
-          >
-            {m.label}
-          </button>
-        ))}
+    <div className="min-h-screen app-bg text-white">
+      <Navbar />
+      <div className="px-6 pb-8">
+        <h1 className="text-2xl font-bold mb-6">Welcome, {user.name}</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl">
+          {modules.map((m) => (
+            <button
+              key={m.path}
+              onClick={() => navigate(m.path)}
+              className={`${m.color} px-6 py-6 rounded-lg font-semibold text-left`}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

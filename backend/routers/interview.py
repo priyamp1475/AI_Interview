@@ -71,3 +71,43 @@ def submit_answer(
     db.commit()
 
     return result
+
+@router.get("/sessions/{session_id}")
+def get_session_detail(
+    session_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(auth.get_current_user),
+):
+    session = (
+        db.query(models.InterviewSession)
+        .filter(models.InterviewSession.id == session_id)
+        .filter(models.InterviewSession.user_id == current_user.id)
+        .first()
+    )
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    questions = (
+        db.query(models.Question)
+        .filter(models.Question.session_id == session.id)
+        .order_by(models.Question.order_index)
+        .all()
+    )
+
+    qa_list = []
+    for q in questions:
+        answer = db.query(models.Answer).filter(models.Answer.question_id == q.id).first()
+        qa_list.append({
+            "question": q.question_text,
+            "answer": answer.answer_text if answer else None,
+            "score": answer.score if answer else None,
+            "feedback": answer.feedback if answer else None,
+        })
+
+    return {
+        "session_id": session.id,
+        "role": session.role,
+        "topic": session.topic,
+        "date": session.started_at,
+        "questions": qa_list,
+    }

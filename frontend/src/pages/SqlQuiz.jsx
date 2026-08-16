@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../api/client";
+import Navbar from "../components/Navbar";
 
 function SqlQuiz() {
   const navigate = useNavigate();
@@ -46,14 +47,10 @@ function SqlQuiz() {
   };
 
   return (
-    <div className="min-h-screen app-bg text-white p-8">
-      <div className="max-w-3xl mx-auto space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">SQL Quiz</h1>
-          <button onClick={() => navigate("/dashboard")} className="text-gray-400 hover:text-white">
-            Back to Dashboard
-          </button>
-        </div>
+    <div className="min-h-screen app-bg text-white">
+      <Navbar />
+      <div className="max-w-3xl mx-auto px-6 pb-8 space-y-6">
+        <h1 className="text-2xl font-bold">SQL Quiz</h1>
 
         {!question && (
           <form onSubmit={handleGenerate} className="bg-gray-800 p-6 rounded-lg space-y-4">

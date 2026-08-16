@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiClient from "../api/client";
+import Navbar from "../components/Navbar";
 
 function Resume() {
   const navigate = useNavigate();
@@ -29,14 +30,10 @@ function Resume() {
   };
 
   return (
-    <div className="min-h-screen app-bg text-white p-8">
-      <div className="max-w-2xl mx-auto space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Resume Upload</h1>
-          <button onClick={() => navigate("/dashboard")} className="text-gray-400 hover:text-white">
-            Back to Dashboard
-          </button>
-        </div>
+    <div className="min-h-screen app-bg text-white">
+      <Navbar />
+      <div className="max-w-2xl mx-auto px-6 pb-8 space-y-6">
+        <h1 className="text-2xl font-bold">Resume Upload</h1>
 
         <div className="bg-gray-800 p-6 rounded-lg space-y-4">
           <input
