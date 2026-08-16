@@ -29,7 +29,8 @@ function Dashboard() {
       <Navbar />
       <div className="px-6 pb-8">
         <h1 className="text-2xl font-bold mb-6">Welcome, {user.name}</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl">
           {modules.map((m) => (
             <button
               key={m.path}
@@ -39,6 +40,7 @@ function Dashboard() {
               {m.label}
             </button>
           ))}
+          </div>
         </div>
       </div>
     </div>
