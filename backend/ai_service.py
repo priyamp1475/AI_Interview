@@ -94,3 +94,24 @@ Keep schema_sql and seed_sql valid standard SQLite syntax. Use simple, realistic
 
     question = json.loads(content)
     return question
+
+
+def extract_skills_from_resume(resume_text: str):
+    prompt = f"""You are analyzing a candidate's resume text to extract key information.
+
+Resume text:
+{resume_text[:6000]}
+
+Return ONLY valid JSON in this exact structure, nothing else:
+{{
+  "skills": ["skill1", "skill2", "skill3"],
+  "experience_summary": "1-2 sentence summary of their experience level and background",
+  "suggested_roles": ["role1", "role2"]
+}}
+"""
+
+    response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
+    content = _clean_json_response(response.text)
+
+    result = json.loads(content)
+    return result

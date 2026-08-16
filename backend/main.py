@@ -7,6 +7,7 @@ from routers import auth as auth_router
 from routers import interview as interview_router
 from routers import coding as coding_router
 from routers import sql_quiz as sql_quiz_router
+from routers import resume as resume_router
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -24,6 +25,7 @@ app.include_router(auth_router.router)
 app.include_router(interview_router.router)
 app.include_router(coding_router.router)
 app.include_router(sql_quiz_router.router)
+app.include_router(resume_router.router)
 
 
 @app.get("/")

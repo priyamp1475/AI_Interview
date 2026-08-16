@@ -30,6 +30,9 @@ httptools==0.8.0
 httpx==0.28.1
 idna==3.18
 passlib==1.7.4
+pdfminer.six==20260107
+pdfplumber==0.11.10
+pillow==12.3.0
 proto-plus==1.28.2
 protobuf==5.29.6
 pyasn1==0.6.4
@@ -38,6 +41,7 @@ pycparser==3.0
 pydantic==2.13.4
 pydantic_core==2.46.4
 pyparsing==3.3.2
+pypdfium2==5.13.0
 python-dotenv==1.2.2
 python-jose==3.5.0
 python-multipart==0.0.32
