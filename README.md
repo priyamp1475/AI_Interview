@@ -2,7 +2,7 @@
 
 A full-stack, AI-powered mock interview platform. Practice technical interviews with an AI interviewer that asks questions out loud, listens to your spoken answers, scores them, and gives feedback — plus a coding round, SQL quiz, resume analysis, and a performance dashboard to track progress over time.
 
-**Live demo:** https://YOUR-VERCEL-URL.vercel.app
+**Live demo:** [https://YOUR-VERCEL-URL.vercel.app](https://ai-interview-rs78-git-main-priyam7.vercel.app/)
 **Backend API docs:** https://ai-interview-ojio.onrender.com/docs
 
 > Note: the backend is hosted on Render's free tier, which spins down after periods of inactivity. The first request after idle time may take 20-30 seconds to respond while the server wakes up — subsequent requests are fast.
